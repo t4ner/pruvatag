@@ -99,7 +99,7 @@ function Login() {
                     type="submit"
                     className="w-full mb-4 text-lg font-medium mt-6 rounded-full bg-white text-purple-600 hover:bg-gray-600 hover:text-white py-2 transition-colors duration-300"
                   >
-                    Login
+                    Giriş Yap
                   </button>
                 </form>
                 {error && (
