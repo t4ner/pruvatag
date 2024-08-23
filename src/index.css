@@ -72,3 +72,39 @@ body {
   pointer-events: auto;
   bottom: 9.5px; /* Yavaşça yukarı kayacak mesafe */
 }
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.slider {
+  height: 150px; /* 100px + 50px büyütme */
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.slider .slide-track {
+  display: flex;
+  align-items: center; /* Logoları dikeyde ortalamak için */
+  animation: scroll 60s linear infinite;
+  width: calc(300px * 38); /* 150px (büyütülmüş) * 2 * 19 slide */
+}
+
+.slider .slide {
+  height: 150px; /* 100px + 50px büyütme */
+  width: 300px; /* 250px + 50px büyütme */
+  display: flex;
+  justify-content: center; /* Logoyu yatayda ortalamak için */
+  align-items: center; /* Logoyu dikeyde ortalamak için */
+}
+
+.slider img {
+  max-height: 100%;
+  max-width: 100%;
+}
