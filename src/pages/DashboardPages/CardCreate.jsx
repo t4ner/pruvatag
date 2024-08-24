@@ -12,9 +12,9 @@ import discord from "/socialMediaLogo/discord.svg";
 import linkedin from "/socialMediaLogo/linkedin.svg";
 import youtube from "/socialMediaLogo/youtube.svg";
 import wechat from "/socialMediaLogo/wechat.svg";
-import theme1 from "/themes/10.png";
+import theme1 from "/themes/12.png";
 import Swal from "sweetalert2";
-import theme2 from "/themes/11.png";
+import theme2 from "/themes/13.png";
 import axios from "axios";
 import { stepperValidation } from "./StepperValidation";
 import { useNavigate } from "react-router-dom";
@@ -1418,6 +1418,10 @@ function CardCreate() {
                       <label htmlFor="photo1" className="text-sm">
                         Profil Fotoğrafı
                       </label>
+                      <h3 className="text-sm py-3 text-red-500">
+                        * Önerilen Boyut: 700x700 piksel (veya tercihinize göre
+                        başka bir kare boyut)
+                      </h3>
                       <input
                         id="photo1"
                         name="photo1"
@@ -1439,6 +1443,10 @@ function CardCreate() {
                       <label htmlFor="photo2" className="text-sm">
                         Banner Fotoğrafı
                       </label>
+                      <h3 className="text-sm py-3 text-red-500">
+                        * Önerilen Boyut: 1500x450 piksel (veya tercihinize göre
+                        başka bir geniş ekran boyut)
+                      </h3>
                       <input
                         id="photo2"
                         name="photo2"
@@ -1462,7 +1470,10 @@ function CardCreate() {
                     <button className="text-lg font-medium text-zinc-700 mt-3 md:mt-6">
                       GALERİYE FOTOĞRAF EKLE
                     </button>
-
+                    <h3 className="text-sm  text-red-500">
+                      * Önerilen Boyut: 600x400 piksel (veya tercihinize göre
+                      başka bir geniş ekran boyut)
+                    </h3>
                     <button
                       type="button"
                       onClick={handleGallery}

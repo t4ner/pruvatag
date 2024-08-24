@@ -1,6 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 function Advantageous() {
+  const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth >= 1024);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsLargeScreen(window.innerWidth >= 1024);
+    };
+
+    // Pencere boyutu değiştiğinde boyutu kontrol et
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // Ekran boyutuna göre icon boyutunu belirle
+  const iconSize = isLargeScreen ? "125px" : "100px";
   return (
     <div className="container my-20">
       <div>
@@ -8,17 +22,19 @@ function Advantageous() {
           <span className="py-2 px-4 text-xs bg-blue-100 text-blue-600 rounded-3xl font-medium ">
             NEDEN PRUVATAG ?
           </span>
-          <h3 className="text-5xl font-bold py-10">Daha Güçlü Bir İmaj</h3>
+          <h3 className="text-[35px] lg:text-5xl font-bold py-10">
+            Daha Güçlü Bir İmaj
+          </h3>
         </div>
 
-        <div className="flex space-x-5 container w-[90%]">
+        <div className="flex-col lg:flex lg:flex-row lg:space-x-5 container w-[90%]">
           <div className="rounded-md flex flex-col p-5 gap-y-3 text-center basis-1/3 shadow-xl">
             <div>
               <lord-icon
                 src="https://cdn.lordicon.com/gqdnbnwt.json"
                 trigger="loop"
                 colors="primary:#121331,secondary:#16a9c7"
-                style={{ width: "125px", height: "125px" }}
+                style={{ width: iconSize, height: iconSize }}
               ></lord-icon>
             </div>
             <h3 className="text-lg font-medium">Kalıcı Bağlantılar</h3>
@@ -35,7 +51,7 @@ function Advantageous() {
                 src="https://cdn.lordicon.com/arpadbri.json"
                 trigger="loop"
                 colors="primary:#121331,secondary:#16a9c7"
-                style={{ width: "125px", height: "125px" }}
+                style={{ width: iconSize, height: iconSize }}
               ></lord-icon>
             </div>
             <h3 className="text-lg font-medium">Doğayı Koru</h3>
@@ -51,7 +67,7 @@ function Advantageous() {
                 src="https://cdn.lordicon.com/gqzfzudq.json"
                 trigger="loop"
                 colors="primary:#121331,secondary:#16a9c7"
-                style={{ width: "125px", height: "125px" }}
+                style={{ width: iconSize, height: iconSize }}
               ></lord-icon>
             </div>
             <h3 className="text-lg font-medium">Sınırsız Paylaşım</h3>
@@ -62,14 +78,14 @@ function Advantageous() {
             </p>
           </div>
         </div>
-        <div className="flex space-x-5 container mt-5 w-[90%]">
+        <div className="flex-col lg:flex lg:flex-row lg:space-x-5 container mt-5 w-[90%]">
           <div className="rounded-md flex flex-col p-5 gap-y-3 text-center basis-1/3 shadow-xl">
             <div>
               <lord-icon
                 src="https://cdn.lordicon.com/yzctygpq.json"
                 trigger="loop"
                 colors="primary:#121331,secondary:#16a9c7"
-                style={{ width: "125px", height: "125px" }}
+                style={{ width: iconSize, height: iconSize }}
               ></lord-icon>
             </div>
             <h3 className="text-lg font-medium">Temassız İletişim</h3>
@@ -84,7 +100,7 @@ function Advantageous() {
                 src="https://cdn.lordicon.com/qhviklyi.json"
                 trigger="loop"
                 colors="primary:#121331,secondary:#16a9c7"
-                style={{ width: "125px", height: "125px" }}
+                style={{ width: iconSize, height: iconSize }}
               ></lord-icon>
             </div>
             <h3 className="text-lg font-medium">Maliyetleri Düşür</h3>
@@ -99,7 +115,7 @@ function Advantageous() {
                 src="https://cdn.lordicon.com/vtgwital.json"
                 trigger="loop"
                 colors="primary:#121331,secondary:#16a9c7"
-                style={{ width: "125px", height: "125px" }}
+                style={{ width: iconSize, height: iconSize }}
               ></lord-icon>
             </div>
             <h3 className="text-lg font-medium">Bilgileri Güncelleyin</h3>

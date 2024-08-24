@@ -3,6 +3,8 @@ import loginImage from "/bghero/login.jpg";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { jwtDecode } from "jwt-decode";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
 function Login() {
   const navigate = useNavigate();
 
@@ -54,10 +56,14 @@ function Login() {
 
   return (
     <>
+      <div className="bg-gray-500 text-black pb-2">
+        <Navbar />
+      </div>
+
       <div className="h-screen w-screen flex overflow-hidden">
         <div className="basis-1/2">
           <div>
-            <div className="flex items-center justify-center h-screen">
+            <div className="flex items-center justify-center h-screen w-screen lg:w-auto">
               <div className="bg-gradient-to-l from-fuchsia-600 to-blue-600 pb-2 border border-slate-499 rounded-md p-8 shadow-lg backdrop-filter backdrop-blur-sm bg-opacity-30 relative">
                 <h1 className="text-3xl md:text-4xl text-white font-bold text-center mb-6">
                   Giriş yap
@@ -111,9 +117,12 @@ function Login() {
             </div>
           </div>
         </div>
-        <div className="basis-1/2">
+        <div className="basis-1/2 hidden lg:block">
           <img src={loginImage} alt="" />
         </div>
+      </div>
+      <div className="-mt-20">
+        <Footer/>
       </div>
     </>
   );

@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 
 function Dashboard() {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
 
   return (
     <div className="flex font-montserrat">
       <div
         className={` ${
-          open ? "w-72" : "w-20 "
-        } border-r-2 border-[#50c878] p-5  pt-8 relative duration-300 shadow-lg shadow-[#50c878]`}
+          open ? "w-80" : "w-20 "
+        } border-r-2 bg-white border-[#50c878] p-5  pt-8 relative duration-300 shadow-lg shadow-[#50c878]`}
       >
         {" "}
         <img

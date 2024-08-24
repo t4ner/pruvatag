@@ -44,11 +44,14 @@ function SliderBrand() {
   ];
 
   return (
-    <div className="slider py-40 pl-5 w-[90%] container">
-      <div className="slide-track items-center space-x-20 pl-5">
+    <div className="slider  h-[150px] m-auto overflow-hidden relative w-full pt-16 lg:pt-16 lg:py-40 pl-5 container">
+      <div className="slide-track flex items-center  space-x-5 lg:space-x-20 pl-5">
         {/* Slides dizisini iki kez birleştirerek sonsuz kaydırma efekti oluşturun */}
         {slides.concat(slides).map((src, index) => (
-          <div className="slide" key={index}>
+          <div
+            className="h-[115px] w-[230px] lg:h-[150px] lg:w-[300px] flex justify-center items-center"
+            key={index}
+          >
             <img src={src} alt={`Slide ${index + 1}`} />
           </div>
         ))}

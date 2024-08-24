@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import logo from "/logo/logo.png";
-import { FaCreditCard, FaUser } from "react-icons/fa";
 import { IoMenu, IoClose } from "react-icons/io5";
 import { Link, useNavigate } from "react-router-dom";
+import logo2 from "/logo/logo.png";
+import { FaCreditCard, FaUser } from "react-icons/fa";
 
-function Navbar() {
+const Header = () => {
   const navigate = useNavigate();
   const email = localStorage.getItem("email");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,12 +22,12 @@ function Navbar() {
       <nav className="flex justify-between items-center w-[92%] mx-auto">
         <div className="text-emerald-500 text-4xl font-bold flex gap-2">
           <a href="/">
-            <img src={logo} className="w-80  rounded-lg pt-1" />
+            <img src={logo2} className="w-80  rounded-lg pt-1" />
           </a>
         </div>
         <div
           className={`nav-links duration-500  md:static absolute z-50 bg-white md:min-h-fit min-h-full left-0 ${
-            isMenuOpen ? "top-[75px]" : "top-[-100%]"
+            isMenuOpen ? "top-[100px]" : "top-[-100%]"
           } md:w-auto w-full flex px-5`}
         >
           <ul className="flex md:flex-row flex-col z-50  md:hidden md:items-center md:gap-[4vw] gap-2 mt-5">
@@ -42,20 +42,19 @@ function Navbar() {
             {email && (
               <li>
                 <Link
-                  className=" block md:hidden font-medium "
+                  className="flex items-center gap-x-3 md:hidden font-medium "
                   to="/dashboard/digital-business-card-update"
                 >
-                  <FaCreditCard size={20} /> KARTVİZİT İŞLEMLERİ
+                  <FaCreditCard size={20} /> Kartvizit İşlemleri
                 </Link>
               </li>
             )}
             {email ? (
               <button
                 onClick={handleLogout}
-                className="bg-emerald-400 font-medium block md:hidden text-white px-5 py-2 rounded-full hover:bg-[#87acec] duration-500"
+                className="font-medium block md:hidden  py-2 rounded-full duration-500"
               >
-                <Link to="/">
-                  {" "}
+                <Link to="/" className="flex items-center gap-x-3">
                   <FaUser size={18} /> Çıkış yap
                 </Link>
               </button>
@@ -64,7 +63,7 @@ function Navbar() {
                 {/* <button className="bg-orange-300 font-medium block md:hidden text-white px-5 py-2 rounded-full hover:bg-[#87acec]">
                   <Link to="/signIn">Üye ol</Link>
                 </button> */}
-                <button className="bg-emerald-400 font-medium block md:hidden text-white px-5 py-2 rounded-full hover:bg-[#87acec]">
+                <button className=" font-medium block md:hidden text-white px-5 py-2 rounded-full ">
                   <Link to="/login">
                     {" "}
                     <FaUser size={18} /> Giriş yap
@@ -74,7 +73,7 @@ function Navbar() {
             )}
           </ul>
         </div>
-        <div className="flex items-center gap-x-10 pr-32">
+        <div className="flex items-center gap-2">
           {/* <Link
             className="hover:text-gray-500 hidden md:block font-semibold text-zinc-500 mr-4"
             to="/dijital-kartvizit-satin-al"
@@ -84,7 +83,7 @@ function Navbar() {
 
           {email && (
             <Link
-              className=" hidden  font-medium  md:flex items-center gap-x-3 text-white"
+              className="hidden md:flex items-center gap-x-3 font-medium text-white mr-4"
               to="/dashboard/digital-business-card-update"
             >
               <FaCreditCard size={20} className="text-white" />
@@ -95,10 +94,9 @@ function Navbar() {
           {email ? (
             <button
               onClick={handleLogout}
-              className=" font-medium hidden md:block text-white   duration-500"
+              className=" font-medium hidden md:block text-white px-5 py-2 rounded-full  duration-500"
             >
               <Link className="flex items-center gap-x-2">
-                {" "}
                 <FaUser size={18} />
                 Çıkış Yap
               </Link>
@@ -121,18 +119,18 @@ function Navbar() {
           {isMenuOpen ? (
             <IoClose
               onClick={toggleMenu}
-              className="text-3xl cursor-pointer md:hidden"
+              className="text-3xl cursor-pointer md:hidden mt-2"
             />
           ) : (
             <IoMenu
               onClick={toggleMenu}
-              className="text-3xl cursor-pointer md:hidden"
+              className="text-3xl cursor-pointer md:hidden mt-2"
             />
           )}
         </div>
       </nav>
     </header>
   );
-}
+};
 
-export default Navbar;
+export default Header;

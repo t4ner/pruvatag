@@ -10,8 +10,8 @@ import youtube from "/socialMediaLogo/youtube.svg";
 import ciceksepeti from "/socialMediaLogo/ciceksepeti.png";
 import discord from "/socialMediaLogo/discord.svg";
 import Swal from "sweetalert2";
-import theme1 from "/themes/10.png";
-import theme2 from "/themes/11.png";
+import theme1 from "/themes/12.png";
+import theme2 from "/themes/13.png";
 import classNames from "classnames";
 import wechat from "/socialMediaLogo/wechat.svg";
 import axios from "axios";
@@ -2371,6 +2371,10 @@ function CardUpdate() {
               <label htmlFor="photo1" className="text-sm">
                 Profil Fotoğrafı
               </label>
+              <h3 className="text-sm py-3 text-red-500">
+                * Önerilen Boyut: 700x700 piksel (veya tercihinize göre başka
+                bir kare boyut)
+              </h3>
               <input
                 id="photo1"
                 name="photo1"
@@ -2409,6 +2413,10 @@ function CardUpdate() {
               <label htmlFor="photo2" className="text-sm">
                 Banner Fotoğrafı
               </label>
+              <h3 className="text-sm py-3 text-red-500">
+                * Önerilen Boyut: 1500x450 piksel (veya tercihinize göre başka
+                bir geniş ekran boyut)
+              </h3>
               <input
                 id="photo2"
                 name="photo2"
@@ -2515,7 +2523,10 @@ function CardUpdate() {
             <button className="text-lg font-medium text-zinc-700 mt-3 md:mt-6">
               GALERİYE FOTOĞRAF EKLE
             </button>
-
+            <h3 className="text-sm  text-red-500">
+              * Önerilen Boyut: 600x400 piksel (veya tercihinize göre başka bir
+              geniş ekran boyut)
+            </h3>
             <button
               type="button"
               onClick={handleGallery}

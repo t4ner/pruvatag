@@ -12,9 +12,9 @@ function Footer() {
       <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
         <div class="sm:flex sm:items-center sm:justify-between">
           <a to="/">
-            <img src={logo} class="h-12" alt="Flowbite Logo" />
+            <img src={logo} class="h-12" alt="Pruvatag Logo" />
           </a>
-          <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-white sm:mb-0">
+          <ul class="flex flex-wrap items-center mb-6 mt-3 lg:mt-0 text-sm font-medium text-white sm:mb-0">
             <li>
               <a href="#" class="hover:underline me-4 md:me-6">
                 Anasayfa

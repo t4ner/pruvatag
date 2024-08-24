@@ -5,12 +5,12 @@ function Institutional() {
   return (
     <div className="  mt-10 relative">
       <img src={insbg} className="absolute right-0 top-28 -z-50" />
-      <div className="flex items-center gap-x-20 w-[83%] container">
+      <div className="flex-col lg:flex lg:flex-row items-center gap-x-20 px-2 lg:px-0 lg:w-[83%] container">
         <div>
           <span className="py-2 px-4 text-xs bg-blue-100 text-blue-600 rounded-3xl font-medium ">
             KURUMSAL PRUVATAG
           </span>
-          <h3 className="text-[45px] font-bold text-zinc-800 py-5">
+          <h3 className="text-[35px] lg:text-[45px] font-bold text-zinc-800 py-5">
             Kurumsal Sipariş
           </h3>
           <div className="text-gray-800 space-y-5 text-[15px]">
@@ -29,7 +29,7 @@ function Institutional() {
             </p>
           </div>
         </div>
-        <div>
+        <div className="mt-10 lg:mt-0">
           <img src={institutional} alt="" />
         </div>
       </div>
