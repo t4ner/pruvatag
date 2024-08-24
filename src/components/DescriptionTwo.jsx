@@ -1,5 +1,5 @@
 import React from "react";
-import descriptioncard from "/card/descriptiontwo.png";
+import descriptioncard from "/card/descriptiontwo2.png";
 function DescriptionTwo() {
   return (
     <div className=" pl-10 mt-10 relative">
@@ -9,25 +9,25 @@ function DescriptionTwo() {
             PRUVATAG
           </span>
           <div>
-            <h3 className="text-[45px] font-bold py-5">
-              Özel Tasarım ve QR Kod
-            </h3>
+            <h3 className="text-[45px] font-bold py-5">Pruvatag'ı Keşfet</h3>
             <p className="text-[15px] text-gray-800">
-              Siyah, Beyaz, ve kişiselleştirebileceğiniz kart zemini üzerine
-              logonuzu ekleyebilirsiniz.
+              Karbon ayak izinizi düşürün. Her yıl 600 ton’a varan CO2
+              tüketimine engel olun. Dilediğiniz zaman tüm bilgilerinizi
+              güncelleyerek yeniden kartvizit bastırma derdine son verin!
             </p>
           </div>
           <div className="mt-5">
-            <h3 className="text-[45px] font-bold py-5">
-              Kolay güncellenebilir
-            </h3>
+            <h3 className="text-[45px] font-bold py-5">Yeşil Teknoloji</h3>
             <p className="text-[15px] text-gray-800">
-              Bilgilerinizi saniyeler içinde güncelleyin.
+              Pruvatag, kullanarak binlerce kartvizit baskısı yaptırmak zorunda
+              kalmayın, unutulan, güncellenemeyen ve verdiğiniz kişiler
+              tarafından çöpe atılan kartvizitler yüzünden oluşan tonlarca atık
+              kağıda engel olup, doğaya katkıda bulunun.
             </p>
           </div>
         </div>
         <div className="">
-          <img src={descriptioncard} className="w-[1000px]" />
+          <img src={descriptioncard} className="w-[900px]" />
         </div>
       </div>
     </div>

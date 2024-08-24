@@ -1,5 +1,5 @@
 import React from "react";
-import descriptioncard from "/card/description.png";
+import descriptioncard from "/card/description2.png";
 function Description() {
   return (
     <div className="  mt-10 relative">
@@ -12,15 +12,19 @@ function Description() {
             PRUVATAG
           </span>
           <div>
-            <h3 className="text-[45px] font-bold py-5">Dijital Kartvizit</h3>
+            <h3 className="text-[45px] font-bold py-5">Bireysel Kartvizit</h3>
             <p className="text-[15px] text-gray-800">
-              Yönetim panelinden sanal kartvizit oluşturun ve paylaşın.
+              Firma bilgilerinizin yanı sıra kişisel bilgileriniz, sosyal medya
+              hesaplarınızı ve fotoğrafınızı ilk defa tanıştığınız insanlarla
+              paylaşarak etkili bir izlenim sağlayabilirsiniz.
             </p>
           </div>
           <div className="mt-5">
-            <h3 className="text-[45px] font-bold py-5">Veriniz Güvende</h3>
+            <h3 className="text-[45px] font-bold py-5">Kurumsal Kartvizit</h3>
             <p className="text-[15px] text-gray-800">
-              Bilgileriniz şifrelenerek saklanır. İstemediğiniz kimse göremez.
+              Firmanıza ait logo, web sitesi, katalog, galeri, e-ticaret
+              bilgileri, banka hesap bilgileri, fatura bilgileri tek tuşla
+              istediğiniz yere aktarabilirsiniz.
             </p>
           </div>
         </div>

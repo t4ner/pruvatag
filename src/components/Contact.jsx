@@ -2,10 +2,7 @@ import React from "react";
 
 function Contact() {
   return (
-    <div
-      className="mt-12 mb-24 py-24"
-     
-    >
+    <div className="mt-12 mb-24 py-24">
       <div className="  mx-auto">
         <div className="border-2 border-purple-600 shadow-3xl  flex flex-col lg:flex-row w-[85%]  bg-white rounded-xl mx-auto overflow-hidden">
           <div

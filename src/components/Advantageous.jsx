@@ -41,7 +41,7 @@ function Advantageous() {
             <h3 className="text-lg font-medium">Doğayı Koru</h3>
             <p className="text-[15px]">
               Artık eski kağıt kartvizitlere veda etmenin, çevre üzerindeki
-              etkilerinizi azaltmanın zamanı. Çevre dostu Poppy, farkınızı
+              etkilerinizi azaltmanın zamanı. Çevre dostu Pruvatag, farkınızı
               ortaya koyarak markanıza sürdürülebilir yeşil değer katar.
             </p>
           </div>
