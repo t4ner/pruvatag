@@ -26,7 +26,7 @@ function DescriptionTwo() {
             </p>
           </div>
         </div>
-        <div className="mt-10 lg:mt-0">
+        <div className="mt-11 lg:mt-0">
           <img src={descriptioncard} className="w-[900px]" />
         </div>
       </div>
