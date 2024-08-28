@@ -72,7 +72,7 @@ function CardUpdate() {
     epttAvm: "",
     firm: "",
   });
-  console.log("values", values);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -148,7 +148,7 @@ function CardUpdate() {
           `https://ecoqrcode.com/businessCard/getCatalogByLink?linkId=${response.data.linkId}`
         );
         setCatalogInformation(catalog.data);
-        console.log("catalog", catalog);
+
         const updatedBankaInformationCreate = bankaInformationCreate.map(
           (item, index) => ({
             ...item,
@@ -288,7 +288,6 @@ function CardUpdate() {
   const getImageProfil = (name) => {
     const image = imagesInformation.find((img) => img.name === name);
     if (image) {
-      console.log("getImageProfil", image); // ID'yi kontrol et
       return { url: image.url, id: image.id };
     }
     return { url: "", id: null }; // Bulunamazsa varsayılan değer döndür
@@ -297,14 +296,10 @@ function CardUpdate() {
   const getImageBanner = (name) => {
     const image = imagesInformation.find((img) => img.name === name);
     if (image) {
-      console.log("getImageBanner", image); // ID'yi kontrol et
       return { url: image.url, id: image.id };
     }
     return { url: "", id: null }; // Bulunamazsa varsayılan değer döndür
   };
-
-  console.log("profil", profilPhoto);
-  console.log("banner", bannerPhoto);
 
   const [showInputInstagram, setShowInputInstagram] = useState(false);
   const showInstagram = () => {
@@ -608,18 +603,13 @@ function CardUpdate() {
         formData,
         { headers }
       );
-      console.log("Yükleme başarılı:", response.data);
-      console.log("formdata", formData);
+
       setImage3("");
       setImage4("");
       setImage5("");
       setImage6("");
       setImage7("");
     } catch (error) {
-      console.error(
-        "Yükleme hatası:",
-        error.response ? error.response.data : error.message
-      );
       Swal.fire({
         icon: "error",
         title: "Hata",
@@ -711,14 +701,10 @@ function CardUpdate() {
         confirmButtonText: "Tamam",
       });
 
-      console.log("Banka bilgisi silindi:", response.data);
-
       // Silme işleminden sonra banka bilgilerini güncellemek için
       // fetchBankaBilgileri fonksiyonunu yeniden çağırabiliriz.
       // fetchBankaBilgileri();
     } catch (error) {
-      console.error("Banka bilgisi silinirken hata oluştu:", error);
-
       // Hata bildirimini göster
       Swal.fire({
         icon: "error",
@@ -749,14 +735,10 @@ function CardUpdate() {
         confirmButtonText: "Tamam",
       });
 
-      console.log("Bağlantı bilgisi silindi:", response.data);
-
       // Silme işleminden sonra banka bilgilerini güncellemek için
       // fetchBankaBilgileri fonksiyonunu yeniden çağırabiliriz.
       // fetchBankaBilgileri();
     } catch (error) {
-      console.error("Bağlantı silinirken hata oluştu:", error);
-
       // Hata bildirimini göster
       Swal.fire({
         icon: "error",
@@ -786,11 +768,7 @@ function CardUpdate() {
         text: "Fatura bilgisi başarıyla silindi.",
         confirmButtonText: "Tamam",
       });
-
-      console.log("Fatura bilgisi silindi:", response.data);
     } catch (error) {
-      console.error("Fatura bilgisi silinirken hata oluştu:", error);
-
       // Hata bildirimini göster
       Swal.fire({
         icon: "error",
@@ -820,11 +798,7 @@ function CardUpdate() {
         text: "Vekalet bilgisi başarıyla silindi.",
         confirmButtonText: "Tamam",
       });
-
-      console.log("Vekalet belgesi silindi:", response.data);
     } catch (error) {
-      console.error("Vekalet bilgisi silinirken hata oluştu:", error);
-
       // Hata bildirimini göster
       Swal.fire({
         icon: "error",
@@ -843,7 +817,6 @@ function CardUpdate() {
       setCatalogInformation((prevState) =>
         prevState.filter((catalogInfo) => catalogInfo.id !== id)
       );
-      console.log("Fatura bilgisi silindi:", response.data);
     } catch (error) {
       console.error("Fatura bilgisi silinirken hata oluştu:", error);
     }
@@ -869,7 +842,6 @@ function CardUpdate() {
     };
     setLinkInformationCreate(updatedLinkInformation);
   };
-  console.log("link state", linkInformationCreate);
 
   const handleChangeInvoice = (event, index) => {
     const { name, value } = event.target;
@@ -903,7 +875,6 @@ function CardUpdate() {
           bankInfo.accountName.trim() !== "" &&
           bankInfo.bankName.trim() !== ""
       );
-      console.log("filteredData", filteredData);
 
       // Filtrelenmiş verileri gönder
       if (filteredData.length > 0) {
@@ -956,7 +927,6 @@ function CardUpdate() {
         });
       }
     } catch (error) {
-      console.error("Banka bilgisi gönderilirken hata oluştu:", error);
       Swal.fire({
         icon: "error",
         title: "Hata",
@@ -973,7 +943,6 @@ function CardUpdate() {
         (linkInfo) =>
           linkInfo.title.trim() !== "" && linkInfo.link.trim() !== ""
       );
-      console.log("filteredData", filteredData);
 
       // Filtrelenmiş verileri gönder
       if (filteredData.length > 0) {
@@ -1022,7 +991,6 @@ function CardUpdate() {
         });
       }
     } catch (error) {
-      console.error("Bağlantı gönderilirken hata oluştu:", error);
       Swal.fire({
         icon: "error",
         title: "Hata",
@@ -1059,8 +1027,6 @@ function CardUpdate() {
         },
       ]);
     } catch (error) {
-      console.error("Fatura bilgisi gönderilirken hata oluştu:", error);
-
       // Hata bildirimini göster
       Swal.fire({
         icon: "error",
@@ -1098,8 +1064,6 @@ function CardUpdate() {
         },
       ]);
     } catch (error) {
-      console.error("Vekalet bilgisi gönderilirken hata oluştu:", error);
-
       // Hata bildirimini göster
       Swal.fire({
         icon: "error",
@@ -1131,16 +1095,12 @@ function CardUpdate() {
         formData,
         { headers }
       );
-      console.log("Yükleme başarılı:", response.data);
+
       setCatalog("");
       setCatalog2("");
       setCatalog3("");
       setCatalog4("");
     } catch (error) {
-      console.error(
-        "Yükleme hatası:",
-        error.response ? error.response.data : error.message
-      );
       Swal.fire({
         icon: "error",
         title: "Hata",
@@ -1154,15 +1114,14 @@ function CardUpdate() {
   );
   const deleteGalleryImage = async (id) => {
     const url = `https://ecoqrcode.com/businessCard/deleteImages?id=${id}`;
-    console.log("Request URL:", url); // URL'yi kontrol edin
+
     try {
       const token = localStorage.getItem("token");
       const headers = {
         Authorization: `Bearer ${token}`,
       };
-      console.log("headers", headers);
+
       await axios.delete(url, { headers });
-      console.log("Image deleted successfully");
 
       // Resim başarıyla silindikten sonra galeri listesini güncelle
       setImagesInformation((prevImages) =>
@@ -1216,7 +1175,7 @@ function CardUpdate() {
     }
   };
   const isInputDisabled2 = !!getImageProfil("banner").url;
-  console.log("image3", image3);
+
   return (
     <div className="font-montserrat">
       {values.linkId !== "" && (

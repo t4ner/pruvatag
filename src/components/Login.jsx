@@ -18,7 +18,6 @@ function Login() {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
-  console.log(formData);
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -30,16 +29,16 @@ function Login() {
           password: formData.password,
         }
       );
-      console.log(response);
+
       const token = response.data.token; // Sunucudan gelen token alanı buraya göre düzenlendiğini varsayıyorum
-      console.log(token);
+
       if (!token) {
         throw new Error("Token not found in response");
       }
 
       // Tokenin doğru formatta olduğundan emin olun
       const decodedToken = jwtDecode(token);
-      console.log(decodedToken);
+
       localStorage.setItem("token", token);
       localStorage.setItem("email", decodedToken.sub);
 
@@ -122,7 +121,7 @@ function Login() {
         </div>
       </div>
       <div className="-mt-20">
-        <Footer/>
+        <Footer />
       </div>
     </>
   );
