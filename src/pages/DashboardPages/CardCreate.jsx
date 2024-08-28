@@ -36,7 +36,7 @@ function CardCreate() {
   const [showLink, setShowLink] = useState(false);
   const navigate = useNavigate();
   const localStrogeEmail = localStorage.getItem("email");
-  console.log(digitalCardId, "digitalCardId");
+
   return (
     <div>
       <Formik
@@ -74,6 +74,7 @@ function CardCreate() {
           amazon: "",
           getir: "",
           epttAvm: "",
+          channelId: "2",
 
           //step2
           bankInformationList: [
@@ -187,32 +188,29 @@ function CardCreate() {
             delete requestData.warrantOfAttorneyDtoList;
             delete requestData.createLinkInformation;
 
-            console.log("requestData", requestData);
             localStorage.setItem("email", values.email);
             const token = localStorage.getItem("token");
-            console.log(token, "token");
+
             const headers = {
               Authorization: `Bearer ${token}`,
               "Content-Type": "application/json",
             };
-            console.log("requestData", requestData);
+
             try {
               const response = await axios.post(
                 "https://ecoqrcode.com/businessCard/createDigiCard",
                 requestData,
                 { headers: headers }
               );
-              console.log("requestData", requestData);
+
               setDigitalCardId(response.data.digitalCardId);
-              console.log("requestData", requestData);
+
               Swal.fire({
                 icon: "success",
                 title: "Başarılı!",
                 text: "Kartınız başarıyla oluşturuldu!",
               });
-              console.log("requestData", requestData);
             } catch (error) {
-              console.log("requestData", requestData);
               Swal.fire({
                 icon: "error",
                 title: "Oops...",
@@ -224,7 +222,6 @@ function CardCreate() {
             }
           };
 
-          console.log(values);
           const [error, setError] = useState("");
           const handleImage1Change = (event) => {
             const file = event.target.files[0];
@@ -424,12 +421,7 @@ function CardCreate() {
                 formData,
                 { headers }
               );
-              console.log("Yükleme başarılı:", response.data);
             } catch (error) {
-              console.error(
-                "Yükleme hatası:",
-                error.response ? error.response.data : error.message
-              );
               Swal.fire({
                 icon: "error",
                 title: "Hata",
@@ -463,13 +455,7 @@ function CardCreate() {
                 formData,
                 { headers }
               );
-              console.log("Yükleme başarılı:", response.data);
             } catch (error) {
-              console.log("Image", response.data);
-              console.error(
-                "Yükleme hatası:",
-                error.response ? error.response.data : error.message
-              );
               Swal.fire({
                 icon: "error",
                 title: "Hata",
@@ -500,13 +486,7 @@ function CardCreate() {
                 formData,
                 { headers }
               );
-              console.log("Yükleme başarılı:", response.data);
-              console.log("formdata", formData);
             } catch (error) {
-              console.error(
-                "Yükleme hatası:",
-                error.response ? error.response.data : error.message
-              );
               Swal.fire({
                 icon: "error",
                 title: "Hata",
@@ -529,8 +509,6 @@ function CardCreate() {
                 digitalCardId: digitalCardId, // Add digitalCardId
               }));
 
-            console.log("bankInformation", bankInformation);
-
             // Prepare warrant of attorney with digitalCardId
             const warrantOfAttorney = values.warrantOfAttorneyDtoList
               .filter(
@@ -542,8 +520,6 @@ function CardCreate() {
                 digitalCardId: digitalCardId, // Add digitalCardId
               }));
 
-            console.log("warrantOfAttorney", warrantOfAttorney);
-
             const linkInfo = values.createLinkInformation
               .filter(
                 (link) => link.title && link.link // Add other necessary checks
@@ -552,7 +528,7 @@ function CardCreate() {
                 ...link, // Spread existing warrant info
                 digitalCardId: digitalCardId, // Add digitalCardId
               }));
-            console.log("linkInfo", linkInfo);
+
             // Prepare invoice information with digitalCardId
             const invoiceInformation = values.invoiceInformationList
               .filter(
@@ -567,8 +543,6 @@ function CardCreate() {
                 digitalCardId: digitalCardId, // Add digitalCardId
               }));
 
-            console.log("invoiceInformation", invoiceInformation);
-
             const token = localStorage.getItem("token");
             const headers = {
               Authorization: `Bearer ${token}`,
@@ -582,9 +556,6 @@ function CardCreate() {
                 bankInformation,
                 { headers }
               );
-              console.log("Bank Response:", bankResponse.data);
-              console.log("Bank gidişat:", bankInformation);
-              // Handle success for bank information
 
               // Post warrant of attorney
               const warrantResponse = await axios.post(
@@ -592,7 +563,7 @@ function CardCreate() {
                 warrantOfAttorney,
                 { headers }
               );
-              console.log("Warrant Response:", warrantResponse.data);
+
               // Handle success for warrant of attorney
 
               // Post invoice information
@@ -601,7 +572,7 @@ function CardCreate() {
                 invoiceInformation,
                 { headers }
               );
-              console.log("Invoice Response:", invoiceResponse.data);
+
               // Handle success for invoice information
 
               const linkResponse = await axios.post(
@@ -609,7 +580,7 @@ function CardCreate() {
                 linkInfo,
                 { headers }
               );
-              console.log("link Response:", linkResponse.data);
+
               navigate(`/${values.linkId}`);
             } catch (error) {
               console.error("Error:", error);
@@ -778,7 +749,7 @@ function CardCreate() {
                         disabled
                         className="input text-gray-600 mr-0.5 bg-zinc-300 flex items-center justify-center"
                       >
-                        ecoqrcode.com/
+                        pruvatag.com/
                       </div>
                       <Field
                         name="linkId"

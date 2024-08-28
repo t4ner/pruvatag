@@ -9,8 +9,8 @@ function Contact() {
     e.preventDefault();
 
     emailjs
-      .sendForm("service_pi7fqld", "template_pbhc8yg", form.current, {
-        publicKey: "4z5ni50PSFSjcxbaE",
+      .sendForm("service_mlc12er", "template_9y5grr3", form.current, {
+        publicKey: "56ckk2KHOTW_qtDhe",
       })
       .then(
         () => {
@@ -83,7 +83,6 @@ function Contact() {
                 />
               </div>
 
-       
               <div className="mt-5">
                 <button
                   type="submit"

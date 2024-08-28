@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { IoMenu, IoClose } from "react-icons/io5";
+import { IoMenu, IoClose, IoStorefront } from "react-icons/io5";
 import { Link, useNavigate } from "react-router-dom";
 import logo2 from "/logo/logo.png";
 import { FaCreditCard, FaUser } from "react-icons/fa";
@@ -39,6 +39,7 @@ const Header = () => {
                 DİJİTAL KARTVİZİT SATIN AL
               </Link> */}
             </li>
+
             {email && (
               <li>
                 <Link
@@ -50,23 +51,43 @@ const Header = () => {
               </li>
             )}
             {email ? (
-              <button
-                onClick={handleLogout}
-                className="font-medium block md:hidden  py-2 rounded-full duration-500"
-              >
-                <Link to="/" className="flex items-center gap-x-3">
-                  <FaUser size={18} /> Çıkış yap
-                </Link>
-              </button>
+              <>
+                <div>
+                  <a
+                    className=" gap-x-3 items-center font-medium flex  md:hidden  text-black pt-3 rounded-full  duration-500"
+                    href="https://www.pruvatag.com/"
+                    target="_blank"
+                  >
+                    <IoStorefront size={20} /> Mağaza
+                  </a>
+                </div>
+                <button
+                  onClick={handleLogout}
+                  className="font-medium block md:hidden  py-2 rounded-full duration-500"
+                >
+                  <Link to="/" className="flex items-center gap-x-3">
+                    <FaUser size={18} /> Çıkış yap
+                  </Link>
+                </button>
+              </>
             ) : (
               <>
                 {/* <button className="bg-orange-300 font-medium block md:hidden text-white px-5 py-2 rounded-full hover:bg-[#87acec]">
                   <Link to="/signIn">Üye ol</Link>
                 </button> */}
-                <button className=" font-medium block md:hidden text-white px-5 py-2 rounded-full ">
-                  <Link to="/login">
+                <div>
+                  <a
+                    className=" gap-x-3 items-center font-medium flex px-5 py-2  md:hidden  text-black pt-3 rounded-full  duration-500"
+                    href="https://www.pruvatag.com/"
+                    target="_blank"
+                  >
+                    <IoStorefront size={20} /> Mağaza
+                  </a>
+                </div>
+                <button className=" font-medium block md:hidden text-black px-5 py-2 rounded-full ">
+                  <Link className="flex items-center gap-x-3" to="/login">
                     {" "}
-                    <FaUser size={18} /> Giriş yap
+                    <FaUser size={18} /> <span>Giriş yap</span>
                   </Link>
                 </button>
               </>
@@ -90,7 +111,15 @@ const Header = () => {
               Kartvizit İşlemleri
             </Link>
           )}
-
+          <div>
+            <a
+              className=" gap-x-3 items-center font-medium hidden md:flex text-white px-5 py-2 rounded-full  duration-500"
+              href="https://www.pruvatag.com/"
+              target="_blank"
+            >
+              <IoStorefront size={20} /> Mağaza
+            </a>
+          </div>
           {email ? (
             <button
               onClick={handleLogout}

@@ -1230,7 +1230,7 @@ function CardUpdate() {
                 disabled
                 className="input text-gray-600 mr-0.5 bg-zinc-200 flex items-center justify-center"
               >
-                ecoqrcode.com/
+                pruvatag.com/
               </div>
               <input
                 name="linkId"

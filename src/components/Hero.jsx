@@ -22,7 +22,7 @@ function Hero() {
         </div>
         <div className="flex-1 lg:order-1">
           <h2 className="font-bold relative text-[35px] lg:text-[60px] lg:w-[520px]">
-            Pruvatag Card Akıllı Dijital Kartvizit
+            Pruvatag Akıllı Dijital Kartvizit
             <span className="border-b-[16px] border-red-100 absolute bottom-2 left-0 w-[300px] lg:w-[520px] -z-50"></span>
           </h2>
 
