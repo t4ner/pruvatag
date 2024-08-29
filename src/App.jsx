@@ -8,6 +8,8 @@ import CardUpdate from "./pages/DashboardPages/CardUpdate";
 import CardCreate from "./pages/DashboardPages/CardCreate";
 import Theme1 from "./components/Theme";
 import NotFound from "./components/NotFound";
+import Admin from "./admin/Admin";
+import UserCreate from "./admin/UserCreate";
 
 function App() {
   return (
@@ -22,6 +24,9 @@ function App() {
           <Route path="digital-business-card-create" element={<CardCreate />} />
         </Route>
         <Route path="/notfound" element={<NotFound />} />
+        <Route path="/admin" element={<Admin />}>
+          <Route path="user-create" element={<UserCreate />} />
+        </Route>
       </Routes>
     </div>
   );
