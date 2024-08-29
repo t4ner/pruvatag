@@ -2743,7 +2743,7 @@ function CardUpdate() {
       {values.linkId === "" && (
         <div
           className="flex items-center justify-center h-screen p-2 md:p-0"
-          style={{ backgroundImage: "url('/hero/hero.jpg')" }}
+          style={{ backgroundImage: "url('/bghero/updateHero.jpg')" }}
         >
           <div className="bg-green-300 border border-slate-499 rounded-md p-8 shadow-lg backdrop-filter backdrop-blur-sm bg-opacity-30 relative md:w-1/2">
             <h1 className="text-3xl md:text-4xl text-white font-bold text-center mb-6">

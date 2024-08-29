@@ -5,7 +5,7 @@ import herocard from "/card/hero-card2.png";
 
 function Hero() {
   return (
-    <div className="relative w-screen lg:h-screen overflow-hidden">
+    <div className="relative w-screen overflow-hidden">
       <img
         src={hero}
         className="absolute right-0 top-0 w-full lg:w-[800px]   object-cover -z-50"

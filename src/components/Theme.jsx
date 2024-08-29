@@ -143,7 +143,7 @@ function Theme1() {
   const [loading, setLoading] = useState(true);
   const [photos, setPhotos] = useState([]);
   const [gallerys, setGallerys] = useState([]);
-  const urlToShare = `https://ecoqrcode.com/${themeInfo.linkId}`;
+  const urlToShare = `https://pruvatag.com.tr/${themeInfo.linkId}`;
 
   const navigate = useNavigate();
   useEffect(() => {
@@ -342,7 +342,7 @@ function Theme1() {
     if (navigator.share) {
       navigator
         .share({
-          title: "ecoQr Dijital Kartvizitim",
+          title: "Pruvatag Dijital Kartvizitim",
           url: urlToShare,
         })
         .then(() => console.log("Başarıyla paylaşıldı!"))
@@ -373,7 +373,7 @@ function Theme1() {
 
       // 4. Paylaşım verilerini oluşturma
       const shareData = {
-        title: "ecoQr Dijital Kartvizitim",
+        title: "Pruvatag Dijital Kartvizitim",
         files: [imageFile],
       };
 
@@ -1143,7 +1143,11 @@ function Theme1() {
           {(themeInfo.sahibinden ||
             themeInfo.cicekSepeti ||
             themeInfo.hepsiburada ||
-            themeInfo.trendyol) && (
+            themeInfo.trendyol ||
+            themeInfo.n11 ||
+            themeInfo.amazon ||
+            themeInfo.getir ||
+            themeInfo.epttAvm) && (
             <div className="border shadow-lg rounded-md border-zinc-500 text-center text-lg font-semibold  py-2 mt-5 ">
               <p>PAZAR YERLERİ</p>
               <div className="flex flex-wrap mt-5  gap-y-6">
