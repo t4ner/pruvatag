@@ -27,6 +27,7 @@ function Login() {
         {
           usernameOrEmail: formData.email,
           password: formData.password,
+          channelId : 2
         }
       );
 
@@ -42,7 +43,7 @@ function Login() {
       localStorage.setItem("token", token);
       localStorage.setItem("email", decodedToken.sub);
 
-      if (decodedToken.sub === formData.email) {
+      if (localStorage.getItem("email")) {
         navigate("/");
         setError(null);
       } else {

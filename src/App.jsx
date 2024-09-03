@@ -10,6 +10,7 @@ import Theme1 from "./components/Theme";
 import NotFound from "./components/NotFound";
 import Admin from "./admin/Admin";
 import UserCreate from "./admin/UserCreate";
+import CardList from "./admin/CardList";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/notfound" element={<NotFound />} />
         <Route path="/admin" element={<Admin />}>
           <Route path="user-create" element={<UserCreate />} />
+          <Route path="card-list" element={<CardList />} />
         </Route>
       </Routes>
     </div>

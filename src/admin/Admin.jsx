@@ -33,7 +33,19 @@ function Admin() {
                 !open && "hidden"
               } origin-left duration-200 font-medium md:text-lg`}
             >
-              <Link to="digital-business-card-update">Kullanıcı Oluştur</Link>
+              <Link to="user-create">Kullanıcı Oluştur</Link>
+            </span>
+          </li>
+          <li className="flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-400 text-base items-center gap-x-4 ">
+            <Link to="card-list" className="w-10 md:w-auto">
+              <img src={"/dashboard/Chart.png"} />
+            </Link>
+            <span
+              className={`${
+                !open && "hidden"
+              } origin-left duration-200 font-medium md:text-lg`}
+            >
+              <Link to="card-list">Kartları Listele</Link>
             </span>
           </li>
           {/* <li className="flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-400 text-base items-center gap-x-4 ">

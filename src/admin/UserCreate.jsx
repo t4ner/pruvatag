@@ -5,7 +5,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 const UserCreate = () => {
   return (
-    <div>
+    <div className="p-5 lg:p-0">
       <div className="flex items-center justify-center h-screen  ">
         <div className="bg-emerald-700  border border-slate-499 rounded-md p-8 shadow-lg backdrop-filter backdrop-blur-sm bg-opacity-30 relative">
           <h1 className="text-3xl md:text-4xl text-white font-bold text-center mb-6">
@@ -18,7 +18,7 @@ const UserCreate = () => {
               surname: "",
               password: "",
               username: "",
-              channelId: "2",
+              channelId: 2,
             }}
             validationSchema={Yup.object({
               email: Yup.string()

@@ -12,7 +12,7 @@ function NotFound() {
       <div className=" md:pt-10">
         <Link
           to="/"
-          className="bg-emerald-600 text-xs tracking-wide md:text-base text-white font-semibold py-2 px-4 md:py-3 md:px-5 rounded-lg"
+          className="bg-emerald-600 font-montserrat text-xs tracking-wide md:text-base text-white font-semibold py-2 px-4 md:py-3 md:px-5 rounded-lg"
         >
           ANASAYFAYA DÖN
         </Link>
