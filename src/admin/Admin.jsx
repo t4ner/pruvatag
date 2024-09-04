@@ -5,7 +5,7 @@ function Admin() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="flex font-montserrat h-screen">
+    <div className="flex font-montserrat">
       <div
         className={` ${
           open ? "w-80" : "w-20 "
@@ -46,6 +46,18 @@ function Admin() {
               } origin-left duration-200 font-medium md:text-lg`}
             >
               <Link to="card-list">Kartları Listele</Link>
+            </span>
+          </li>
+          <li className="flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-400 text-base items-center gap-x-4 ">
+            <Link to="user-list" className="w-10 md:w-auto">
+              <img src={"/dashboard/Setting.png"} />
+            </Link>
+            <span
+              className={`${
+                !open && "hidden"
+              } origin-left duration-200 font-medium md:text-lg`}
+            >
+              <Link to="user-list">Kullanıcıları Listele</Link>
             </span>
           </li>
           {/* <li className="flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-400 text-base items-center gap-x-4 ">

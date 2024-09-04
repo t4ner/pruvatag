@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import loginImage from "/bghero/login.jpg";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { jwtDecode } from "jwt-decode";
 import Navbar from "./Navbar";
@@ -27,7 +27,7 @@ function Login() {
         {
           usernameOrEmail: formData.email,
           password: formData.password,
-          channelId : 2
+          channelId: 2,
         }
       );
 
@@ -101,6 +101,12 @@ function Login() {
                       Şifre
                     </label>
                   </div>
+                  <Link
+                    to="/forgot-password"
+                    className="text-white underline text-[15px]  font-medium "
+                  >
+                    Şifremi unuttum
+                  </Link>
                   <button
                     type="submit"
                     className="w-full mb-4 text-lg font-medium mt-6 rounded-full bg-white text-purple-600 hover:bg-gray-600 hover:text-white py-2 transition-colors duration-300"

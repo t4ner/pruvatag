@@ -11,6 +11,8 @@ import NotFound from "./components/NotFound";
 import Admin from "./admin/Admin";
 import UserCreate from "./admin/UserCreate";
 import CardList from "./admin/CardList";
+import ForgotPassword from "./components/ForgotPassword";
+import UserList from "./admin/UserList";
 
 function App() {
   return (
@@ -28,7 +30,9 @@ function App() {
         <Route path="/admin" element={<Admin />}>
           <Route path="user-create" element={<UserCreate />} />
           <Route path="card-list" element={<CardList />} />
+          <Route path="user-list" element={<UserList />} />
         </Route>
+        <Route path="/forgot-password" element={<ForgotPassword />} />
       </Routes>
     </div>
   );
