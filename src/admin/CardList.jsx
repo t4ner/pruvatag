@@ -23,9 +23,16 @@ function CardList() {
 
   // Function to handle card deletion
   const handleDelete = async (id) => {
+    const token = localStorage.getItem("token");
+    const headers = {
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "application/json",
+    };
+
     try {
       await axios.delete(
-        `https://ecoqrcode.com/businessCard/deleteDigitalCard?id=${id}`
+        `https://ecoqrcode.com/businessCard/deleteDigitalCard?id=${id}`,
+        {headers}
       );
       // Refresh the list after deletion
       setCardDataList(cardDataList.filter((card) => card.id !== id));
