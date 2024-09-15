@@ -171,10 +171,21 @@ function Theme1() {
         }
 
         if (response.data && response.data.linkId) {
-          const galleryResponse = await axios.get(
-            `https://ecoqrcode.com/businessCard/getGalleryPhotosByLink?linkId=${response.data.linkId}`
-          );
-          setGallerys(galleryResponse.data);
+          try {
+            const galleryResponse = await axios.get(
+              `https://ecoqrcode.com/businessCard/getGalleryPhotosByLink?linkId=${response.data.linkId}`
+            );
+
+            // Filtreleme işlemi
+            const filteredGallery = galleryResponse.data.filter((item) =>
+              item.name.startsWith("gallery")
+            );
+
+            // State'e ayarlama
+            setGallerys(filteredGallery);
+          } catch (error) {
+            console.error("Error fetching gallery photos:", error);
+          }
         }
 
         if (response.data && response.data.id) {
@@ -253,8 +264,6 @@ function Theme1() {
     // Türkçe karakterleri İngilizce karakterlere çevir
     const englishName = convertTurkishToEnglish(name);
     const englishSurname = convertTurkishToEnglish(surname);
-
-    
 
     // VCF içeriğini oluştur
     const vcfContent = generateVCF(
