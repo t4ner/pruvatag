@@ -2331,7 +2331,7 @@ function CardUpdate() {
                 Profil Fotoğrafı
               </label>
               <h3 className="text-sm py-3 text-red-500">
-                * Önerilen Boyut: 700x700 piksel (veya tercihinize göre başka
+                * Önerilen Boyut: 300x300 piksel (veya tercihinize göre başka
                 bir kare boyut)
               </h3>
               <input
@@ -2346,7 +2346,7 @@ function CardUpdate() {
               {profilPhoto && (
                 <img
                   src={URL.createObjectURL(profilPhoto)}
-                  className="h-64 w-96 mt-2"
+                  className="h-[300px] w-[300px] mt-2"
                   alt="Profil Fotoğrafı"
                 />
               )}
@@ -2354,7 +2354,7 @@ function CardUpdate() {
                 <>
                   <img
                     src={getImageProfil("profilphoto").url}
-                    className="h-64 w-96 mt-2"
+                    className="h-[300px] w-[300px] mt-2"
                     alt="Profil Fotoğrafı"
                   />
                   <button
@@ -2373,7 +2373,7 @@ function CardUpdate() {
                 Banner Fotoğrafı
               </label>
               <h3 className="text-sm py-3 text-red-500">
-                * Önerilen Boyut: 1500x450 piksel (veya tercihinize göre başka
+                * Önerilen Boyut: 400x300 piksel (veya tercihinize göre başka
                 bir geniş ekran boyut)
               </h3>
               <input
@@ -2389,7 +2389,7 @@ function CardUpdate() {
                 <img
                   src={URL.createObjectURL(bannerPhoto)}
                   alt="Banner Fotoğrafı"
-                  className="h-64 w-96 mt-2"
+                  className="h-[300px] w-[400px] mt-2"
                 />
               )}
               {!bannerPhoto && getImageBanner("banner") && (
@@ -2397,7 +2397,7 @@ function CardUpdate() {
                   <img
                     src={getImageBanner("banner").url}
                     alt="Banner Fotoğrafı"
-                    className="h-64 w-96 mt-2"
+                    className="h-[300px] w-[400px] mt-2"
                   />
                   <button
                     onClick={deleteBannerPhoto}
@@ -2464,7 +2464,7 @@ function CardUpdate() {
                   key={index}
                   src={image.url}
                   alt={`Galeri Fotoğrafı ${index + 1}`}
-                  className="h-64 w-96 mt-2" // Stil eklemek isterseniz
+                  className="h-[370px] w-[370px] mt-2" // Stil eklemek isterseniz
                 />
                 <button
                   onClick={() => deleteGalleryImage(image.id)}
@@ -2483,7 +2483,7 @@ function CardUpdate() {
               GALERİYE FOTOĞRAF EKLE
             </button>
             <h3 className="text-sm  text-red-500">
-              * Önerilen Boyut: 600x400 piksel (veya tercihinize göre başka bir
+              * Önerilen Boyut: 370x370 piksel (veya tercihinize göre başka bir
               geniş ekran boyut)
             </h3>
             <button
@@ -2514,7 +2514,7 @@ function CardUpdate() {
                         <img
                           src={URL.createObjectURL(image3)}
                           alt="Photo 3"
-                          className="h-64  w-96 object-cover"
+                          className="h-[370px] w-[370px] object-cover"
                         />
                       )}
                     </div>
@@ -2548,7 +2548,7 @@ function CardUpdate() {
                         <img
                           src={URL.createObjectURL(image4)}
                           alt="Photo 4"
-                          className="h-64  w-96 object-cover"
+                          className="h-[370px] w-[370px] object-cover"
                         />
                       )}
                     </div>
@@ -2585,7 +2585,7 @@ function CardUpdate() {
                         <img
                           src={URL.createObjectURL(image5)}
                           alt="Photo 5"
-                          className="h-64  w-96 object-cover"
+                          className="h-[370px] w-[370px] object-cover"
                         />
                       )}
                     </div>
@@ -2620,7 +2620,7 @@ function CardUpdate() {
                         <img
                           src={URL.createObjectURL(image6)}
                           alt="Photo 6"
-                          className="h-64  w-96 object-cover"
+                          className="h-[370px] w-[370px] object-cover"
                         />
                       )}
                     </div>
@@ -2656,7 +2656,7 @@ function CardUpdate() {
                       <img
                         src={URL.createObjectURL(image7)}
                         alt="Photo 7"
-                        className="h-64  w-96 object-cover"
+                        className="h-[370px] w-[370px] object-cover"
                       />
                     )}
                   </div>

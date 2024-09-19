@@ -431,7 +431,7 @@ function Theme1() {
       {themeInfo.themeId === 1 && (
         <div className="">
           {/*banner start*/}
-          <div className="h-[230px] md:h-[450px] w-full">
+          <div className="h-[300px] md:h-[450px] w-[400px] md:w-full">
             {bannerPhoto && (
               <img
                 src={bannerPhoto.url}
@@ -1373,7 +1373,7 @@ function Theme1() {
                 }`}
               >
                 {/* galeri */}
-                <div className="h-[330px] md:h-[400px] md:w-[600px] w-full m-auto relative group overflow-hidden bg-white rounded-2xl ">
+                <div className="h-[370px] md:h-[400px] md:w-[600px] w-[370px] m-auto relative group overflow-hidden bg-white rounded-2xl ">
                   <div className="absolute top-1 right-1 z-50">
                     <button
                       onClick={closeFooter}
@@ -1387,7 +1387,7 @@ function Theme1() {
                       key={index}
                       src={image.url}
                       alt={`Image ${index}`}
-                      className={`w-full h-full  md:h-[400px] md:w-[600px] rounded-2xl absolute top-0 left-0 transition-opacity duration-500 ${
+                      className={`w-full h-full  md:h-[400px] md:w-[600px] bg-cover rounded-2xl absolute top-0 left-0 transition-opacity duration-500 ${
                         index === currentIndex ? "opacity-100" : "opacity-0"
                       }`}
                       style={{
